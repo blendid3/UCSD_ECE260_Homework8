@@ -3,7 +3,7 @@ if {![file exists invs_report]} {
 }
 
 # Load design
-set design jpeg_encoder
+set design aes_cipher_top_1p0.out.v
 set netlist "../../gate/${design}.v"
 set sdc "../../gate/${design}.sdc"
 set home "/home/linux/ieng6/ee260bwi20/public/data/libraries"
