@@ -1,0 +1,34 @@
+######## Create Power Domains ###########
+
+create_power_domain TOP
+
+## Toplevel Connections ######
+#create_power_domain TOP
+
+# VDD 
+create_supply_port VDD 
+create_supply_net VDD -domain TOP
+connect_supply_net VDD -ports VDD
+
+# VSS (0.0V)
+create_supply_port VSS 
+create_supply_net VSS -domain TOP
+connect_supply_net VSS -ports VSS
+
+### Establish Connections ################
+
+set_domain_supply_net TOP -primary_power_net VDD -primary_ground_net VSS
+
+### Create Power State Table ##################
+
+add_port_state VDD -state {ON 0.9}
+add_port_state VSS -state {OFF 0.0}
+
+create_pst pst_top -supplies {VDD VSS}
+add_pst_state ON -pst pst_top -state {ON OFF}
+
+
+
+#set_voltage 0.63 -object VDD
+#set_voltage 0.00 -object VSS
+
