@@ -1,5 +1,5 @@
 
-set clock_cycle 1.18
+set clock_cycle 1.21
 set io_delay 0.1 
 
 set clock_port clk
