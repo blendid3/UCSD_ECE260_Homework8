@@ -6,7 +6,7 @@
 set sdc_version 1.9
 
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
-create_clock [get_ports clk]  -name clk  -period 2.0 -waveform {0 1.0}  -add
+create_clock [get_ports clk]  -name clk  -period 2.03 -waveform {0 1.0}  -add
 set_clock_uncertainty 0.12  [get_clocks clk]
 set_input_delay -clock clk  -max 0  [get_ports {qnt_val[0]}]
 set_input_delay -clock clk  -max 0  [get_ports {qnt_val[1]}]
